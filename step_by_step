@@ -20,5 +20,25 @@ Initialize a repository on your machine and create a remote repo on github and s
 
 Open app in text editor, edit readme file if u like, start step by step instructions file if you like.
 
-	
+System check: Check ur Rubies, versions and gems. i.e. rvm, ruby, rails, bundle, gems etc. 
+	rvm list
+	rvm getset
+	ruby -v
+	rails -v
+
+Install minitest gem: 
+	In Gemfile: 
+	group :test, :development do
+  	gem "minitest-rails"
+	end
+	Check for the minitest generator in console with: 
+	rails generate
+	Install the gem with this from the console:
+	rails g minitest:install
+	Should see a test folder now in ur app in text editor. 
+
+
+
+
+
 
