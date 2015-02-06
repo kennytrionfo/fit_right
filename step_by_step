@@ -72,6 +72,10 @@ Look at the routes this created:
 	With: 
 	rake routes
 
+Generate a controller for your todo_item: 
+	rails g controller todo_items
+	
+
 
 
 
