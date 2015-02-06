@@ -37,6 +37,45 @@ Install minitest gem:
 	rails g minitest:install
 	Should see a test folder now in ur app in text editor. 
 
+PUT TESTING IN HERE ALONG THE WAY!
+	
+Create first model with controllers, views and test files: 
+	rails g scaffold todo_list title:string description:text
+	then
+
+rake db:migrate
+
+Confirm in localhost:3000/todo_list
+
+Change root to point to the todo_lists controller and the index action: 
+	In routes.rb file: 
+	root "todo_lists#index"
+	Check localhost:3000 in browser. Should show all the lists without need to go to /todo_lists
+
+Generate a model for our todo items with a content row/attribute that's a string and that references the todo_list: 
+	With: 
+	rails g model todo_item content:string todo_list:references 
+
+rake db:migrate
+
+Tell the todo_list model that it has many todo_items: 
+	In the todo_list.rb file: 
+	has_many :todo_items
+
+Create some nested routes for our todo_items: 
+	In routes.rb file, make todo_lists resources a block with todo_items resources inside:  
+	resources :todo_lists do
+		resources :todo_items
+	end
+
+Look at the routes this created: 
+	With: 
+	rake routes
+
+
+
+
+
 
 
 
