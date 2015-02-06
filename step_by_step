@@ -74,7 +74,12 @@ Look at the routes this created:
 
 Generate a controller for your todo_item: 
 	rails g controller todo_items
-	
+
+Give yourself the ability to create new todo lists with new todo items: 
+	In todo_items_controller.rb, create a create method that creates a new todo_list variable/instance by setting it to a new TodoList that you find by the todo_list_id key. 
+	Then create a method that creates a new todo item by .. 
+		@todo_list = TodoList.find(params[:todo_list_id])
+		@todo_item = @todo_list.todo_items.create(params[:todo_item].permit(:content))
 
 
 
