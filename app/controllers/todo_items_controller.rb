@@ -6,6 +6,7 @@ class TodoItemsController < ApplicationController
 		redirect_to @todo_list 
 		end
 
+# this controller needs to be finnished. 
 
 	private
 
