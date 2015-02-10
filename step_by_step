@@ -78,9 +78,25 @@ Generate a controller for your todo_item:
 Give yourself the ability to create new todo lists with new todo items: 
 	In todo_items_controller.rb, create a create method that creates a new todo_list variable/instance by setting it to a new TodoList that you find by the todo_list_id key. 
 	Then create a method that creates a new todo item by .. 
-	with two private methods, one to set the todo list and one to create todo item params: 
+	with two private methods, one to set the todo list and one to create todo item params like: 
+	
+	before_action :set_todo_list
+
+	def create
+		@todo_item = @todo_list.todo_item.create(todo_item_params)
+		redirect_to @todo_list 
+	end
+
+
+	private
+
+	def set_todo_list 
 		@todo_list = TodoList.find(params[:todo_list_id])
-		@todo_item = @todo_list.todo_items.create(params[:todo_item].permit(:content))
+	end
+
+	def todo_item_params
+		params[:todo_item].permit(:content)
+	end
 
 Go back and fix controller. it's not same as tute. 
 

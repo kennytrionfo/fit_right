@@ -2,11 +2,10 @@ class TodoItemsController < ApplicationController
 	before_action :set_todo_list
 
 	def create
-		@todo_list = TodoList.find(params[:todo_list_id])
+		@todo_item = @todo_list.todo_item.create(todo_item_params)
 		redirect_to @todo_list 
 		end
 
-# this controller needs to be finnished. 
 
 	private
 
