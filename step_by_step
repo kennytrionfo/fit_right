@@ -1,6 +1,6 @@
 Step by step instructions on how to build fit_right app in ruby on rails. 
 
-Create a new rails app and skip test unit in the installation: 
+Create a new rails app, skipping test unit in the installation: 
 	rails new fit_right --skip-test-unit
 	should see rails create a bunch of files & directories for you and then bundle instal for you too. 
 
@@ -10,24 +10,32 @@ CD into app in console and start server to make sure it's working in browser:
 	in browswer: localhost:3000
 	should get the Welcome Aboard rails screen
 
-Initialize a repository on your machine and create a remote repo on github and sync them:
-	git init
-	git add .
-	git commit -m "first commit"
-	Go create the repo on github
-	git remote add origin https://github.com/kennytrionfo/fit_right.git
-	git push -u origin master
+Start repo:
+	Initialize a repository on your machine:  
+		git init
+		git add .
+		git commit -m "first commit"
+	Create a remote repo on github and sync them:
+		Go create the repo on github
+		git remote add origin https://github.com/kennytrionfo/fit_right.git
+		git push -u origin master
 
-Open app in text editor, edit readme file if u like, start step by step instructions file if you like.
+Start documentation: 
+	Open app in text editor, 
+	Edit readme file if u like, 
+	Start step by step instructions file if you like. 
 
-System check: Check ur Rubies, versions and gems. i.e. rvm, ruby, rails, bundle, gems etc. 
+System check: 
+	Check ur Rubies, versions and gems etc. i.e. rvm, ruby, rails, bundle, gems etc. 
 	rvm list
 	rvm getset
 	ruby -v
 	rails -v
 
-Install minitest gem: 
-	In Gemfile: 
+Install gems: 
+	In Gemfile:
+	Better Errors, factory girl, sprockets? 
+	Minitest: 
 	group :test, :development do
   	gem "minitest-rails"
 	end
@@ -39,7 +47,7 @@ Install minitest gem:
 
 PUT TESTING IN HERE ALONG THE WAY!
 	
-Create first model with controllers, views and test files: 
+Create todo_list model with controllers, views and test files: 
 	rails g scaffold todo_list title:string description:text
 	then
 
@@ -98,7 +106,22 @@ Give yourself the ability to create new todo lists with new todo items:
 		params[:todo_item].permit(:content)
 	end
 
-Go back and fix controller. it's not same as tute. 
+Now create the form to actually create a new todo list: 
+	Create two partials (new files) in views/todo_items:
+	1 _form.html.erb 
+	<%= form_for([@todo_list, @todo_list.todo_items.build]) do |f| %>
+	<%= f.text_field :content, placeholder: "New Todo" %>
+	<%= f.submit %>
+	<%= end %>
+
+	2 _todo_item.html.erb
+	<p> <%= todo_item.content %></p>
+
+Show the todo form and the todo list items under the todo list show page:
+	Create a div that renders the todo list from the _todo_items.html.erb file. Under the description: 
+	<div id="todo_items_wrapper">
+		<%= render @todo_list.todo_items %>
+	</div>
 
 
 
