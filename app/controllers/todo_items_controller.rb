@@ -15,6 +15,7 @@ class TodoItemsController < ApplicationController
 	end
 
 
+
 	private
 
 	def set_todo_list 
@@ -24,4 +25,6 @@ class TodoItemsController < ApplicationController
 	def todo_item_params
 		params[:todo_item].permit(:content)
 	end
+
+	
 end

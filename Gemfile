@@ -30,6 +30,11 @@ group :test, :development do
   	gem "minitest-rails"
 end
 
+group :development do
+  gem "better_errors"
+end
+
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

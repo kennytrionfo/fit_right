@@ -1,14 +1,9 @@
 Step by step instructions on how to build fit_right app in ruby on rails. 
 
-Create a new rails app, skipping test unit in the installation: 
-	rails new fit_right --skip-test-unit
-	should see rails create a bunch of files & directories for you and then bundle instal for you too. 
-
-CD into app in console and start server to make sure it's working in browser: 
-	cd fit_right
-	rails server
-	in browswer: localhost:3000
-	should get the Welcome Aboard rails screen
+Create a new rails app:
+	skipping test unit and using Postgress DB in the installation:
+	rails new fit_right --skip-test-unit -d postgresql
+	should see rails create a bunch of files & directories for you and then bundle install for you too. 
 
 Start repo:
 	Initialize a repository on your machine:  
@@ -28,7 +23,7 @@ Start documentation:
 System check: 
 	Check ur Rubies, versions and gems etc. i.e. rvm, ruby, rails, bundle, gems etc. 
 	rvm list
-	rvm getset
+	rvm gemset
 	ruby -v
 	rails -v
 
@@ -122,6 +117,8 @@ Show the todo form and the todo list items under the todo list show page:
 	<div id="todo_items_wrapper">
 		<%= render @todo_list.todo_items %>
 	</div>
+	Add another div with the ?? in it ..
+
 
 
 

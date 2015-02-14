@@ -11,7 +11,8 @@
 </p>
 
 <div id="todo_items_wrapper">
-	<%= render @todo_list.todo_items %>  <!-- This grabs it from the _todo_items.html.erb -->
+	<%= render @todo_list.todo_items %>  
+	<!-- This grabs it from the _todo_items.html.erb -->
 	<div id="form">
 		<%= render "todo_items/form" %>
 	</div>	
@@ -19,3 +20,4 @@
 
 <%= link_to 'Edit', edit_todo_list_path(@todo_list) %> |
 <%= link_to 'Back', todo_lists_path %>
+
