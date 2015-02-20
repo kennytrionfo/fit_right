@@ -76,6 +76,7 @@ Look at the routes this created:
 	rake routes
 
 Generate a controller for your todo_item: 
+	In the console with: 
 	rails g controller todo_items
 
 Give yourself the ability to create new todo lists with new todo items: 

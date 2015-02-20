@@ -1,4 +1,7 @@
 == README
+An app that helps you use time available to do first things first.
+
+
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
