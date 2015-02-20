@@ -146,6 +146,10 @@ Make it so that the app can take a delete request for an item and route it to th
 	Check it in browser. 
 
 Create the ability to mark an item as complete: 
+	Add a migration to add a completed at datetime to the todo_items table: 
+	In console: 
+	rails g migration add_completed_at_to_todo_items completed_at:datetime
+	rake db:migrate
 	
 
 Stopped vid at:
