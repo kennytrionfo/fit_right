@@ -61,9 +61,13 @@ Generate a model for our todo items with a content row/attribute that's a string
 
 rake db:migrate
 
-Tell the todo_list model that it has many todo_items: 
+Do your associations for you models: 
+	Tell the todo_list model that it has many todo_items: 
 	In the todo_list.rb file: 
 	has_many :todo_items
+
+	Tell the todo_item model that it belongs to todo_lists with: 
+	belongs_to :todo_list
 
 Create some nested routes for our todo_items: 
 	In routes.rb file, make todo_lists resources a block with todo_items resources inside:  
@@ -118,10 +122,18 @@ Show the todo form and the todo list items under the todo list show page:
 	<div id="todo_items_wrapper">
 		<%= render @todo_list.todo_items %>
 	</div>
-	Add another div with the ?? in it ..
+	Add another div inside of that div that renders the todo item's form: 
+	<div id="form">
+		<%= render "todo_items/form" %>
+	</div>
+	Test the show page that it shows and that you can make new todo items in a list. 
+
+Back in _todo_item.html.erb: 
+	<%= link_to "Delete", todo_list_todo_item_path(@todo_list, todo_item.id), method: :delete, data: {confirm: "Are you sure?"} %>
 
 
 
+Stopped vid at:
 
 
 
