@@ -164,7 +164,16 @@ Create the ability to mark an item as complete:
     In views/todo_items/_todo_item.html.erb add:
     <%= link_to "Mark as Complete", complete_todo_list_todo_item_path(@todo_list, todo_item.id), method: :patch %>
     Test in browswer. 
-    
+
+    Now add the complete action in the todo_items controller: 
+    Create a private method: 
+    def set_todo_item
+		@todo_item = @todo_list.todo_items.find(params[:id])		
+	end
+	We can also now remove this line from the destroy action above now that it's a private method. 
+	Now create a before action: 
+	before_action :set_todo_item, except: [:create]
+	
 
 
 
