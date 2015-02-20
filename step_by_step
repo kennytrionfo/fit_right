@@ -150,7 +150,25 @@ Create the ability to mark an item as complete:
 	In console: 
 	rails g migration add_completed_at_to_todo_items completed_at:datetime
 	rake db:migrate
-	
+
+	Add a route to give users the ability to mark an item as complete: 
+	In config/routes.rb: 
+	Make the todo_items resources a block and add patch :complete. Should look like:
+	resources :todo_items do
+      member do
+        patch :complete
+      end
+    end
+    rake routes to see it at the top. 
+
+    In views/todo_items/_todo_item.html.erb add:
+    <%= link_to "Mark as Complete", complete_todo_list_todo_item_path(@todo_list, todo_item.id), method: :patch %>
+    Test in browswer. 
+    
+
+
+
+
 
 Stopped vid at:
 
