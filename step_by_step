@@ -473,7 +473,16 @@ Update the show page title and description:
 	Refresh. 
 
 Add delete button in between the edit and back: 
-	
+	With: 
+	<%= link_to 'Delete', todo_list_path(@todo_list), method: :delete, data: {confirm: "Are you sure?"} %>
+
+Change where the user is redirected to after deleting a list: 
+	In todo_lists_controller.rb, in the destroy method, change the redirec_to from todo_lists_url to: 
+	Refresh.
+
+Update the forms' css and icons: 
+
+
 
 
 
