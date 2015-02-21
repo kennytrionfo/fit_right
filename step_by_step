@@ -444,7 +444,22 @@ Put in some better fonts:
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
 Change "Mark comleted" to icons: 
-	In the _todo_item.html.erb, in the first commplete class div, delete the "Mark complete" and turn the link_to into a do
+	In the _todo_item.html.erb, in the first commplete class div, delete the "Mark complete" and turn the link_to into a checkmark:
+	<%= link_to complete_todo_list_todo_item_path(@todo_list, todo_item.id), method: :patch do %>
+		<i style= "opacity: 0.4;" class="fa fa-check"></i>
+	<% end %>
+
+	Do the same thing in the other complete div down below but without the opacity style like: 
+	<%= link_to complete_todo_list_todo_item_path(@todo_list, todo_item.id), method: :patch do %>
+		<i class="fa fa-check"></i>
+	<% end %>
+
+	Change out the trash style for a fa fa icon in the trash div: 
+	<%= link_to todo_list_todo_item_path(@todo_list, todo_item.id), method: :delete, data: { confirm: "Are you sure?" } do %>
+		<i class="fa fa-trash"></i>
+	<% end %>
+	Do the same below with the other trash div. 
+
 
 
 
