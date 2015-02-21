@@ -460,6 +460,22 @@ Change "Mark comleted" to icons:
 	<% end %>
 	Do the same below with the other trash div. 
 
+Update the show page title and description: 
+	At the top, below the notice id, replace the h2 and p tag title and sub titles with: 
+	<h2 class="todo_list_title"><%= @todo_list.title %></h2>
+	<p class="todo_list_sub_title"><%= @todo_list.description %></p>
+
+	Wrap the edit and back buttons at the bottom inside the links class div so: 
+	<div class="links">
+		<%= link_to 'Edit', edit_todo_list_path(@todo_list) %> |
+		<%= link_to 'Back', todo_lists_path %>
+	</div>
+	Refresh. 
+
+	
+
+
+
 
 
 
