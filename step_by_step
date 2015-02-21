@@ -443,6 +443,8 @@ Put in some better fonts:
 	Then go to fontawesome and to get started and grab the MaxCDN link there and put under the google one: 
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
+Change "Mark comleted" to icons: 
+	In the _todo_item.html.erb, in the first commplete class div, delete the "Mark complete" and turn the link_to into a do
 
 
 
