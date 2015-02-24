@@ -481,9 +481,17 @@ Change where the user is redirected to after deleting a list:
 	Refresh.
 
 Update the forms' css and icons: 
-
-
-
+	In the new.html.erb: 
+	Add class="todo_list_title" to the h2.
+	Put the render form in a div with class forms like: 
+	<div class="forms">
+		<%= render 'form' %>
+	</div>
+	Put the link_to in a div with class links like: 
+	<div class="links">
+		<%= link_to 'Back', todo_lists_path %>
+	</div>
+	
 
 
 
