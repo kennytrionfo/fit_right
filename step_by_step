@@ -41,12 +41,13 @@ Install gems:
 	Should see a test folder now in ur app in text editor. 
 
 PUT TESTING IN HERE ALONG THE WAY!
+
+ALSO COME BACK AND ADD IN HERE INSTRUCTIONS FOR MAKING IT MOBILE READY
 	
 Create todo_list model with controllers, views and test files: 
 	rails g scaffold todo_list title:string description:text
 	then
-
-rake db:migrate
+	rake db:migrate
 
 Confirm in localhost:3000/todo_list
 
@@ -58,10 +59,9 @@ Change root to point to the todo_lists controller and the index action:
 Generate a model for our todo items with a content row/attribute that's a string and that references the todo_list: 
 	With: 
 	rails g model todo_item content:string todo_list:references 
+	rake db:migrate
 
-rake db:migrate
-
-Do your associations for you models: 
+Do your associations for your models: 
 	Tell the todo_list model that it has many todo_items: 
 	In the todo_list.rb file: 
 	has_many :todo_items
@@ -226,6 +226,7 @@ Create own css styling or paste in this for convenience:
 	* {
 		box-sizing: border-box;
 	}
+
 	html {
 	  height: 100%;
 	}
@@ -443,7 +444,7 @@ Put in some better fonts:
 	Then go to fontawesome and to get started and grab the MaxCDN link there and put under the google one: 
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
-Change "Mark comleted" to icons: 
+Change words "Mark comleted" to icons: 
 	In the _todo_item.html.erb, in the first commplete class div, delete the "Mark complete" and turn the link_to into a checkmark:
 	<%= link_to complete_todo_list_todo_item_path(@todo_list, todo_item.id), method: :patch do %>
 		<i style= "opacity: 0.4;" class="fa fa-check"></i>
@@ -491,17 +492,9 @@ Update the forms' css and icons:
 	<div class="links">
 		<%= link_to 'Back', todo_lists_path %>
 	</div>
-	
 
+--End--
 
-
-
-
-
-
-
-Stopped vid at:
-22:00
 
 
 
