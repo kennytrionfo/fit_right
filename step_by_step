@@ -1,4 +1,10 @@
-Step by step instructions on how to build fit_right app in ruby on rails. 
+Title: 
+Step by step instructions on how to build fit_right app in ruby on.
+
+Todo:
+- Put devise in. 
+- Add in here how add things to devise. 
+- pretty forms? 
 
 Create a new rails app:
 	skipping test unit and using Postgress DB in the installation:
@@ -29,7 +35,10 @@ System check:
 
 Install gems: 
 	In Gemfile:
-	Better Errors, factory girl, sprockets? 
+	group :development do
+	  gem "better_errors"
+	end
+	factory girl, sprockets? 
 	Minitest: 
 	group :test, :development do
   	gem "minitest-rails"
